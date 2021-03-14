@@ -44,6 +44,7 @@ export default function App() {
             headerTitle: "Strah - glavni problem elite so jezni",
             headerStyle: { backgroundColor: "blue" },
             headerTintColor: "white",
+            
           }}
         />
         <Stack.Screen name="SecondArct" component={SecondArct} />
