@@ -14,4 +14,5 @@
 TO DO:
 1. HIDE HEADER on SCROLL DOWN in FirstArct
 2. ADD VIDEO
-3.
+3. KOMENTARJI HEADER ADD (+) button
+4. KOMENTARJI - (odgovori, like, dislike) - new Modal PRIJAVA

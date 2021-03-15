@@ -9,9 +9,9 @@ import {
 } from "react-native";
 
 const petrol = {
-  uri: 'https://www.petrol.eu/binaries/content/assets/mediakit/logotip-petrol-za-jugovzhodne-trge/petrol-logo-brez-slogana-cmyk.jpg'
-}
-
+  uri:
+    "https://www.petrol.eu/binaries/content/assets/mediakit/logotip-petrol-za-jugovzhodne-trge/petrol-logo-brez-slogana-cmyk.jpg",
+};
 
 const image1 = {
   uri:
@@ -147,26 +147,36 @@ export default function FirstArct({ navigation }) {
         </View>
         <View
           style={{
-            flexDirection: "row",
-            borderColor: "grey",
-            borderWidth: 2,
             width: "50%",
           }}
         >
-          <Image
-            source={commentsIcon}
-            style={{
-              width: 25,
-              height: 25,
-              alignSelf: "center",
-              marginLeft: 10,
-              marginRight: 10,
-            }}
-          />
-          <View style={{ paddingTop: 10, paddingBottom: 10 }}>
-            <Text style={{ color: "grey" }}>KOMENTARJI</Text>
-            <Text style={{ fontWeight: "bold", fontSize: 15 }}>18</Text>
-          </View>
+          <TouchableHighlight
+            onPress={() => navigation.navigate("Comments", { name: "Jane" })}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                borderColor: "grey",
+                borderWidth: 2,
+                width: "100%",
+              }}
+            >
+              <Image
+                source={commentsIcon}
+                style={{
+                  width: 25,
+                  height: 25,
+                  alignSelf: "center",
+                  marginLeft: 10,
+                  marginRight: 10,
+                }}
+              />
+              <View style={{ paddingTop: 10, paddingBottom: 10 }}>
+                <Text style={{ color: "grey" }}>KOMENTARJI</Text>
+                <Text style={{ fontWeight: "bold", fontSize: 15 }}>18</Text>
+              </View>
+            </View>
+          </TouchableHighlight>
         </View>
       </View>
 
@@ -242,48 +252,52 @@ export default function FirstArct({ navigation }) {
         naraslo in znaša 1 (dan prej 0,92).
       </Text>
 
-      <View
-        style={{
-          flexDirection: "row",
-          borderWidth: 1,
-          borderColor: "black",
-          borderRadius: 3,
-          backgroundColor: "grey",
-          margin: 10,
-          paddingBottom: 5,
-        }}
+      <TouchableHighlight
+        onPress={() => navigation.navigate("Comments", { name: "Jane" })}
       >
-        <Image
-          source={image2}
-          style={{ width: "25%", height: "auto", margin: 5 }}
-        />
-        <View style={{ width: "75%" }}>
-          <Text
-            style={{
-              backgroundColor: "blue",
-              color: "white",
-              alignSelf: "flex-start",
-              marginLeft: 5,
-              marginTop: 5,
-              padding: 3,
-              fontWeight: "bold",
-              fontSize: 12,
-            }}
-          >
-            PREBERITE SE
-          </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              alignSelf: "flex-start",
-              padding: 5,
-              fontSize: 15,
-            }}
-          >
-            Suker za 24UR: Goli v serie A so za Ilicica odskocna deska, ...
-          </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            borderWidth: 1,
+            borderColor: "black",
+            borderRadius: 3,
+            backgroundColor: "grey",
+            margin: 10,
+            paddingBottom: 5,
+          }}
+        >
+          <Image
+            source={image2}
+            style={{ width: "25%", height: "auto", margin: 5 }}
+          />
+          <View style={{ width: "75%" }}>
+            <Text
+              style={{
+                backgroundColor: "blue",
+                color: "white",
+                alignSelf: "flex-start",
+                marginLeft: 5,
+                marginTop: 5,
+                padding: 3,
+                fontWeight: "bold",
+                fontSize: 12,
+              }}
+            >
+              PREBERITE SE
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                alignSelf: "flex-start",
+                padding: 5,
+                fontSize: 15,
+              }}
+            >
+              Suker za 24UR: Goli v serie A so za Ilicica odskocna deska, ...
+            </Text>
+          </View>
         </View>
-      </View>
+      </TouchableHighlight>
 
       <Text style={{ margin: 10, fontSize: 16, padding: 5 }}>
         Epidemija, kot ugotavljajo na IJS, predvidoma stagnira.
@@ -412,7 +426,7 @@ export default function FirstArct({ navigation }) {
       </View>
 
       <TouchableHighlight
-        onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
+        onPress={() => navigation.navigate("Comments", { name: "Jane" })}
         style={{
           borderBottomWidth: 1,
           borderBottomColor: "grey",
@@ -453,15 +467,18 @@ export default function FirstArct({ navigation }) {
         </Text>
       </View>
 
-    
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{marginBottom: 20}}>
-          <TouchableHighlight
-            onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
-            style={{
-              margin: 10,
-              width: 200,
-            }}
-          >
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        style={{ marginBottom: 20 }}
+      >
+        <TouchableHighlight
+          onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
+          style={{
+            margin: 10,
+            width: 200,
+          }}
+        >
           <View>
             <Image
               source={image1}
@@ -470,15 +487,15 @@ export default function FirstArct({ navigation }) {
             <Text style={{ fontWeight: "bold", fontSize: 15 }}>
               Kampl obsedel ob remiju Lepziga z Eintrachtom
             </Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
-            style={{
-              margin: 10,
-              width: 200,
-            }}
-          >
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
+          style={{
+            margin: 10,
+            width: 200,
+          }}
+        >
           <View>
             <Image
               source={image1}
@@ -487,15 +504,15 @@ export default function FirstArct({ navigation }) {
             <Text style={{ fontWeight: "bold", fontSize: 15 }}>
               Kampl obsedel ob remiju Lepziga z Eintrachtom
             </Text>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
-            style={{
-              margin: 10,
-              width: 200,
-            }}
-          >
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
+          style={{
+            margin: 10,
+            width: 200,
+          }}
+        >
           <View>
             <Image
               source={image1}
@@ -504,13 +521,16 @@ export default function FirstArct({ navigation }) {
             <Text style={{ fontWeight: "bold", fontSize: 15 }}>
               Kampl obsedel ob remiju Lepziga z Eintrachtom
             </Text>
-            </View>
-          </TouchableHighlight>
-        </ScrollView>
+          </View>
+        </TouchableHighlight>
+      </ScrollView>
 
-<View style={{margin: 10}}>
-        <Image source={petrol} style={{ height: 100, width: '100%', alignSelf: 'center'}} />
-        </View>
+      <View style={{ margin: 10 }}>
+        <Image
+          source={petrol}
+          style={{ height: 100, width: "100%", alignSelf: "center" }}
+        />
+      </View>
     </ScrollView>
   );
 }
