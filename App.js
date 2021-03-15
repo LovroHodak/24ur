@@ -12,7 +12,7 @@ import SecondArct from "./components/SecondArct";
 import ThirdArct from "./components/ThirdArct";
 import FourthArct from "./components/FourthArct";
 import FifthArct from "./components/FifthArct";
-import Comments from "./components/Comments";
+import CommentsFirstArct from "./components/CommentsFirstArct";
 
 const logo = {
   uri: "https://img.appsrankings.com/412851441/24urcom-logo.jpg",
@@ -53,7 +53,7 @@ export default function App() {
         <Stack.Screen name="FourthArct" component={FourthArct} />
         <Stack.Screen name="FifthArct" component={FifthArct} />
 
-        <Stack.Screen name="Comments" component={Comments} options={{
+        <Stack.Screen name="CommentsFirstArct" component={CommentsFirstArct} options={{
             headerTitle: "Komentarji",
             headerStyle: { backgroundColor: "blue" },
             headerTintColor: "white"

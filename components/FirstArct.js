@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -51,10 +51,11 @@ const coronaAttention = {
     "https://images.24ur.com/media/images/1200xX/Jan2021/19e37a0d328b426949e7_62506802.jpg?v=051b",
 };
 
-export default function FirstArct({ navigation }) {
+export default function FirstArct({ navigation, route }) {
+  console.log(route.params)
   return (
     <ScrollView style={styles.container}>
-      <Image source={image1} style={styles.image} />
+      <Image source={route.params.backgroundImageHomeScreen} style={styles.image} />
       <View>
         <Text
           style={{
@@ -66,9 +67,10 @@ export default function FirstArct({ navigation }) {
             padding: 5,
             color: "white",
             alignSelf: "flex-start",
+            textTransform: 'uppercase'
           }}
         >
-          KORONA
+          {route.params.titleTopLeftHomeScreen}
         </Text>
       </View>
       <Text
@@ -83,7 +85,7 @@ export default function FirstArct({ navigation }) {
           fontSize: 25,
         }}
       >
-        IJS: Epidemija stagnira, a nas novi sevi ze dohitevajo
+        {route.params.textInfoHomeScreen}
       </Text>
       <View
         style={{
@@ -93,7 +95,7 @@ export default function FirstArct({ navigation }) {
         }}
       >
         <Text style={{ color: "grey", marginLeft: 10, fontSize: 15 }}>
-          Ljubljana, 14.3.2021, 15:46
+        {route.params.cityArcticle}, {route.params.dateArcticle}, {route.params.timeArcticle}
         </Text>
         <Image
           source={shareIcon}
@@ -118,7 +120,7 @@ export default function FirstArct({ navigation }) {
         />
         <Text style={{ fontSize: 15, marginLeft: 5, marginRight: 5 }}>
           PREDVIDEN CAS BRANJA:
-          <Text style={{ fontWeight: "bold" }}>2 min</Text>
+          <Text style={{ fontWeight: "bold" }}> {route.params.readTimeArcticle} min</Text>
         </Text>
       </View>
       <View style={{ flexDirection: "row", marginBottom: 10 }}>
@@ -142,7 +144,7 @@ export default function FirstArct({ navigation }) {
           />
           <View style={{ paddingTop: 10, paddingBottom: 10 }}>
             <Text style={{ color: "grey" }}>AVTOR</Text>
-            <Text style={{ fontWeight: "bold", fontSize: 15 }}>Maja Racic</Text>
+            <Text style={{ fontWeight: "bold", fontSize: 15 }}>{route.params.authorArcticle}</Text>
           </View>
         </View>
         <View
@@ -151,7 +153,7 @@ export default function FirstArct({ navigation }) {
           }}
         >
           <TouchableHighlight
-            onPress={() => navigation.navigate("Comments", { name: "Jane" })}
+            onPress={() => navigation.navigate("CommentsFirstArct", { name: "Jane" })}
           >
             <View
               style={{
@@ -189,15 +191,7 @@ export default function FirstArct({ navigation }) {
           padding: 5,
         }}
       >
-        "Potrudimo se krivulje obrniti čim bolj strmo navzdol, ker nas
-        dohitevajo novi bolj kužni sevi, ki se v trenutnih pogojih hitro
-        razmnožujejo," so v aktualni projekciji širjenja bolezni covid-19 v
-        Sloveniji zapisali na Institutu Jožefa Stefana. Po njihovih ocenah je
-        reprodukcijsko število R spet nekoliko naraslo in znaša 1 (dan prej
-        0,92). V soboto je še veljalo, da bi povprečno število pozitivnih oseb
-        lahko padlo pod 300 na dan do konca aprila. "Dokler epidemija ne bo
-        začela vidno upadati, ne bomo podajali napovedi, ker so negotovosti
-        prevelike," pa so zapisali danes.
+        {route.params.fabulaArcticle}
       </Text>
 
       <View
@@ -209,7 +203,7 @@ export default function FirstArct({ navigation }) {
         }}
       >
         <Image
-          source={virusImg}
+          source={route.params.image1Article}
           style={{ height: 200, width: "auto", margin: 10 }}
         />
         <Text
@@ -220,24 +214,12 @@ export default function FirstArct({ navigation }) {
             fontSize: 13,
           }}
         >
-          Na svetovnem tekmovanju, katerega cilj je bil izkoristiti moč podatkov
-          in umetne inteligence v boju proti pandemiji, je ekipa IJS osvojila
-          drugo mesto.FOTO: Dreamstime
+          {route.params.textImage1Arcticle}
         </Text>
       </View>
 
       <Text style={{ margin: 10, fontSize: 16, padding: 5 }}>
-        <Text style={{ fontStyle: "italic" }}>
-          "Epidemijo bi bilo dobro čim prej toliko zmanjšati, da bodo lahko
-          epidemiologi sledili vsem stikom,"
-        </Text>
-        so v aktualni projekciji širjenja bolezni covid-19 v Sloveniji uvodoma
-        zapisali na Institutu Jožefa Stefana (IJS), kjer so pred kratkim na
-        svetovnem tekmovanju, katerega cilj je bil izkoristiti moč podatkov in
-        umetne inteligence v boju proti pandemiji, osvojili drugo mesto in si
-        prislužili nagrado v vrednosti 210.000 evrov. "To najbolj učinkovito
-        omejuje širjenje virusa in bo močno olajšalo obvladovanje novega bolj
-        kužnega seva, ko oziroma če se bo razširil," so dodali.
+      {route.params.textArcticle}
       </Text>
 
       <Text style={{ margin: 10, fontSize: 16, padding: 5 }}>
@@ -331,9 +313,9 @@ export default function FirstArct({ navigation }) {
       />
 
       <View style={{ marginTop: 30, marginBottom: 30 }}>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <Text
-            style={{
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        {route.params.tagWordsArcticle.map((word, i) => {
+          return (<Text             style={{
               margin: 10,
               borderColor: "blue",
               borderWidth: 1,
@@ -343,90 +325,13 @@ export default function FirstArct({ navigation }) {
               paddingRight: 10,
               paddingLeft: 10,
               borderRadius: 3,
-            }}
-          >
-            Epidemija
-          </Text>
-          <Text
-            style={{
-              margin: 10,
-              borderColor: "blue",
-              borderWidth: 1,
-              color: "blue",
-              fontWeight: "bold",
-              padding: 3,
-              paddingRight: 10,
-              paddingLeft: 10,
-              borderRadius: 3,
-            }}
-          >
-            Corona
-          </Text>
-          <Text
-            style={{
-              margin: 10,
-              borderColor: "blue",
-              borderWidth: 1,
-              color: "blue",
-              fontWeight: "bold",
-              padding: 3,
-              paddingRight: 10,
-              paddingLeft: 10,
-              borderRadius: 3,
-            }}
-          >
-            Slovenija
-          </Text>
-          <Text
-            style={{
-              margin: 10,
-              borderColor: "blue",
-              borderWidth: 1,
-              color: "blue",
-              fontWeight: "bold",
-              padding: 3,
-              paddingRight: 10,
-              paddingLeft: 10,
-              borderRadius: 3,
-            }}
-          >
-            Ukrepi
-          </Text>
-          <Text
-            style={{
-              margin: 10,
-              borderColor: "blue",
-              borderWidth: 1,
-              color: "blue",
-              fontWeight: "bold",
-              padding: 3,
-              paddingRight: 10,
-              paddingLeft: 10,
-              borderRadius: 3,
-            }}
-          >
-            Vlada
-          </Text>
-          <Text
-            style={{
-              margin: 10,
-              borderColor: "blue",
-              borderWidth: 1,
-              color: "blue",
-              fontWeight: "bold",
-              padding: 3,
-              paddingRight: 10,
-              paddingLeft: 10,
-              borderRadius: 3,
-            }}
-          >
-            Stroka
-          </Text>
-        </ScrollView>
+            }} key={i}>{word}</Text>)
+        })}
+      </ScrollView>
       </View>
 
       <TouchableHighlight
-        onPress={() => navigation.navigate("Comments", { name: "Jane" })}
+        onPress={() => navigation.navigate("CommentsFirstArct", { name: "Jane" })}
         style={{
           borderBottomWidth: 1,
           borderBottomColor: "grey",

@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
+import example1 from "../DBSimulation/jsonSimulation";
+
 const videoIcon = {
   uri:
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYQtQHAOBsdAYqcsf1oyXYMXm-SjOMkHFNLQ&usqp=CAU",
@@ -17,12 +19,14 @@ const commentsIcon = {
   uri: "http://simpleicon.com/wp-content/uploads/comment.png",
 };
 const fotoIcon = {
-  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4QB0OOF49_U6ge7mFwpwAFFSCUYsGzPX7IH7ZYibvajExfOT73M5It47rl_FhwD4MxNw&usqp=CAU",
+  uri:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4QB0OOF49_U6ge7mFwpwAFFSCUYsGzPX7IH7ZYibvajExfOT73M5It47rl_FhwD4MxNw&usqp=CAU",
 };
 
 const commercial = {
-  uri: 'https://lh3.googleusercontent.com/dptkaVWjABSkqCcY1KtZtCksfFn2z21K2nJHls2x3k4IrawtpS28DzwjXCfYHOTcY5Q'
-}
+  uri:
+    "https://lh3.googleusercontent.com/dptkaVWjABSkqCcY1KtZtCksfFn2z21K2nJHls2x3k4IrawtpS28DzwjXCfYHOTcY5Q",
+};
 
 const image1 = {
   uri:
@@ -45,27 +49,26 @@ const image5 = {
     "https://images.freeimages.com/images/large-previews/ad6/concert-1-1438833.jpg",
 };
 const image6 = {
-  uri: 'https://images.freeimages.com/images/large-previews/7bc/bald-eagle-1-1400106.jpg'
-}
+  uri:
+    "https://images.freeimages.com/images/large-previews/7bc/bald-eagle-1-1400106.jpg",
+};
 const image7 = {
-  uri: 'https://images.freeimages.com/images/large-previews/c64/my-beloved-mountains-2-1375135.jpg'
-}
+  uri:
+    "https://images.freeimages.com/images/large-previews/c64/my-beloved-mountains-2-1375135.jpg",
+};
 
 export default function HomeScreen({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <TouchableHighlight
-        onPress={() => navigation.navigate("FirstArct", { name: "Jane" })}
+        onPress={() => navigation.navigate("FirstArct", example1)}
       >
-        <ImageBackground source={image1} style={styles.image}>
+        <ImageBackground source={example1.backgroundImageHomeScreen} style={styles.image}>
           <View style={styles.top}>
-            <Text style={styles.topText}>PROTESTI V AMERIKI</Text>
+            <Text style={styles.topText}>{example1.titleTopLeftHomeScreen}</Text>
           </View>
           <View>
-            <Text style={styles.bottomText}>
-              Strah - glavni problem elite so jezni posamezniki in neomejen
-              pohlep
-            </Text>
+            <Text style={styles.bottomText}>{example1.textInfoHomeScreen}</Text>
             <Image source={commentsIcon} style={styles.bottomImg} />
           </View>
         </ImageBackground>
@@ -107,10 +110,7 @@ export default function HomeScreen({ navigation }) {
       >
         <View>
           <Image source={commercial} style={styles.imageMain} />
-          <Text style={styles.bottomCommercial}>
-            Oglas
-          </Text>
-          
+          <Text style={styles.bottomCommercial}>Oglas</Text>
         </View>
       </TouchableHighlight>
       <TouchableHighlight
@@ -143,7 +143,8 @@ export default function HomeScreen({ navigation }) {
             </View>
           </ImageBackground>
           <Text style={styles.bottomTextMarg}>
-            Od obljub se ne da ziveti. Zapira se najstarejse kulturno drustvo v Sloveniji
+            Od obljub se ne da ziveti. Zapira se najstarejse kulturno drustvo v
+            Sloveniji
           </Text>
           <Image source={commentsIcon} style={styles.bottomImg} />
         </View>
@@ -168,22 +169,23 @@ export default function HomeScreen({ navigation }) {
       <TouchableHighlight
         onPress={() => navigation.navigate("ThirdArct", { name: "Jane" })}
       >
-      <View>
-        <ImageBackground source={image7} style={styles.imageMain}>
-          <View style={styles.top}>
-            <Text style={styles.topText}>UMETNOST BIVANJA</Text>
-          </View>
-          <View>
-            <Text style={styles.bottomText}>
-              Toplejse podnebje vpliva na zivljenja gorski zivali
-            </Text>
-            <Text  style={styles.bottomTextMain}>
-              V Slovenski gorah zivi veliko avtohtonih slovenskih zivali. Zal pa jih zmeraj vec, 
-              zaradi neugodnih zivljenjskih razmer potuje proti severu. Se lahko zgodi da v prihodnosti v nasih gorah ne 
-              bomo vec nasli kozoroga...
-            </Text>
-          </View>
-        </ImageBackground>
+        <View>
+          <ImageBackground source={image7} style={styles.imageMain}>
+            <View style={styles.top}>
+              <Text style={styles.topText}>UMETNOST BIVANJA</Text>
+            </View>
+            <View>
+              <Text style={styles.bottomText}>
+                Toplejse podnebje vpliva na zivljenja gorski zivali
+              </Text>
+              <Text style={styles.bottomTextMain}>
+                V Slovenski gorah zivi veliko avtohtonih slovenskih zivali. Zal
+                pa jih zmeraj vec, zaradi neugodnih zivljenjskih razmer potuje
+                proti severu. Se lahko zgodi da v prihodnosti v nasih gorah ne
+                bomo vec nasli kozoroga...
+              </Text>
+            </View>
+          </ImageBackground>
         </View>
       </TouchableHighlight>
       <TouchableHighlight
@@ -216,7 +218,8 @@ export default function HomeScreen({ navigation }) {
             </View>
           </ImageBackground>
           <Text style={styles.bottomTextMarg}>
-            Od obljub se ne da ziveti. Zapira se najstarejse kulturno drustvo v Sloveniji
+            Od obljub se ne da ziveti. Zapira se najstarejse kulturno drustvo v
+            Sloveniji
           </Text>
           <Image source={commentsIcon} style={styles.bottomImg} />
         </View>
@@ -237,7 +240,7 @@ export default function HomeScreen({ navigation }) {
           </Text>
           <Image source={commentsIcon} style={styles.bottomImg} />
         </View>
-      </TouchableHighlight> 
+      </TouchableHighlight>
 
       <TouchableHighlight
         onPress={() => navigation.navigate("FirstArct", { name: "Jane" })}
@@ -336,7 +339,7 @@ const styles = StyleSheet.create({
     width: "auto",
     height: 500,
     justifyContent: "space-between",
-    margin: 10
+    margin: 10,
   },
   top: {
     flexDirection: "row",
@@ -348,12 +351,13 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 5,
     fontWeight: "bold",
+    textTransform: "uppercase",
   },
   topTextAdv: {
     backgroundColor: "grey",
     color: "white",
     padding: 5,
-    alignSelf: 'flex-end',
+    alignSelf: "flex-end",
   },
   bottomTextAdv: {
     color: "white",
@@ -361,7 +365,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginLeft: 10,
     marginRight: 10,
-    marginBottom: 5
+    marginBottom: 5,
   },
   topImg: {
     width: 25,
@@ -373,14 +377,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
   },
   bottomTextMain: {
     color: "white",
     fontSize: 18,
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 5
+    marginTop: 5,
   },
   bottomImg: {
     width: 25,
@@ -399,7 +403,7 @@ const styles = StyleSheet.create({
     padding: 5,
     fontWeight: "bold",
     textAlign: "center",
-  },  
+  },
   topTextMargSport: {
     backgroundColor: "green",
     color: "white",
@@ -419,20 +423,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
   },
   topImgMarg: {
     width: 25,
     height: 20,
     margin: 15,
-    alignSelf: 'flex-end'
+    alignSelf: "flex-end",
   },
   bottomCommercial: {
     color: "grey",
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
     borderBottomWidth: 2,
-    borderBottomColor: 'grey',
-    paddingBottom: 10
-  }
+    borderBottomColor: "grey",
+    paddingBottom: 10,
+  },
 });

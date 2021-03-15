@@ -16,3 +16,4 @@ TO DO:
 2. ADD VIDEO
 3. KOMENTARJI HEADER ADD (+) button
 4. KOMENTARJI - (odgovori, like, dislike) - new Modal PRIJAVA
+5. functionality for SHARE btn

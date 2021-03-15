@@ -5,6 +5,7 @@ export default function SecondArct({ navigation }) {
   return (
     <View>
       <Text>SECOND</Text>
+
     </View>
   );
 }
