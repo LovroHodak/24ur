@@ -60,7 +60,6 @@ export default function HomeScreen({ navigation }) {
         <ImageBackground source={image1} style={styles.image}>
           <View style={styles.top}>
             <Text style={styles.topText}>PROTESTI V AMERIKI</Text>
-            <Image source={videoIcon} style={styles.topImg} />
           </View>
           <View>
             <Text style={styles.bottomText}>

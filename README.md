@@ -5,4 +5,13 @@
 5. npm install @react-navigation/native @react-navigation/stack
 6. expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context 
 
+7. npm install --save react-native-video
+8. expo install expo-av
 
+
+
+
+TO DO:
+1. HIDE HEADER on SCROLL DOWN in FirstArct
+2. ADD VIDEO
+3.
