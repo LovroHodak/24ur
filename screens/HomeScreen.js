@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Text,
   StyleSheet,
@@ -9,8 +9,7 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
-import example1 from "../DBSimulation/jsonSimulation";
-
+/* IMAGES */
 const videoIcon = {
   uri:
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYQtQHAOBsdAYqcsf1oyXYMXm-SjOMkHFNLQ&usqp=CAU",
@@ -22,12 +21,10 @@ const fotoIcon = {
   uri:
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4QB0OOF49_U6ge7mFwpwAFFSCUYsGzPX7IH7ZYibvajExfOT73M5It47rl_FhwD4MxNw&usqp=CAU",
 };
-
 const commercial = {
   uri:
     "https://lh3.googleusercontent.com/dptkaVWjABSkqCcY1KtZtCksfFn2z21K2nJHls2x3k4IrawtpS28DzwjXCfYHOTcY5Q",
 };
-
 const image1 = {
   uri:
     "https://images.freeimages.com/images/large-previews/529/inmigrants-1569643.jpg",
@@ -57,9 +54,13 @@ const image7 = {
     "https://images.freeimages.com/images/large-previews/c64/my-beloved-mountains-2-1375135.jpg",
 };
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ navigation, route }) {
+
+  const [example1, setExample1] = useState(route.params.forFirst)
+
   return (
     <ScrollView style={styles.container}>
+      {/* FIRST ARCTICLE */}
       <TouchableHighlight
         onPress={() => navigation.navigate("FirstArct", example1)}
       >
@@ -73,6 +74,8 @@ export default function HomeScreen({ navigation }) {
           </View>
         </ImageBackground>
       </TouchableHighlight>
+
+    {/* SECOND ARCTICLE */}
       <TouchableHighlight
         onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
       >
@@ -243,7 +246,7 @@ export default function HomeScreen({ navigation }) {
       </TouchableHighlight>
 
       <TouchableHighlight
-        onPress={() => navigation.navigate("FirstArct", { name: "Jane" })}
+        onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
       >
         <ImageBackground source={image1} style={styles.imageAdv}>
           <View>
@@ -258,7 +261,7 @@ export default function HomeScreen({ navigation }) {
         </ImageBackground>
       </TouchableHighlight>
       <TouchableHighlight
-        onPress={() => navigation.navigate("FirstArct", { name: "Jane" })}
+        onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
       >
         <ImageBackground source={image2} style={styles.imageAdv}>
           <View>
@@ -273,7 +276,7 @@ export default function HomeScreen({ navigation }) {
         </ImageBackground>
       </TouchableHighlight>
       <TouchableHighlight
-        onPress={() => navigation.navigate("FirstArct", { name: "Jane" })}
+        onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
       >
         <ImageBackground source={image3} style={styles.imageAdv}>
           <View>
@@ -288,7 +291,7 @@ export default function HomeScreen({ navigation }) {
         </ImageBackground>
       </TouchableHighlight>
       <TouchableHighlight
-        onPress={() => navigation.navigate("FirstArct", { name: "Jane" })}
+        onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
       >
         <ImageBackground source={image4} style={styles.imageAdv}>
           <View>
@@ -303,7 +306,7 @@ export default function HomeScreen({ navigation }) {
         </ImageBackground>
       </TouchableHighlight>
       <TouchableHighlight
-        onPress={() => navigation.navigate("FirstArct", { name: "Jane" })}
+        onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
       >
         <ImageBackground source={image5} style={styles.imageAdv}>
           <View>
