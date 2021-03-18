@@ -12,7 +12,6 @@ import article from "../DBSimulation/data";
 import icons from "../DBSimulation/icons";
 
 export default function SecondArct({ navigation }) {
-  console.log(fotoIcon);
   return (
     <View>
       <Text>SECOND</Text>

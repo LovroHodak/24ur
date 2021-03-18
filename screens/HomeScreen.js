@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Text,
   StyleSheet,
@@ -55,8 +55,9 @@ const image7 = {
 };
 
 export default function HomeScreen({ navigation, route }) {
+  const [example1, setExample1] = useState(route.params.forFirst);
 
-  const [example1, setExample1] = useState(route.params.forFirst)
+  //console.log(route.params)
 
   return (
     <ScrollView style={styles.container}>
@@ -64,18 +65,26 @@ export default function HomeScreen({ navigation, route }) {
       <TouchableHighlight
         onPress={() => navigation.navigate("FirstArct", example1)}
       >
-        <ImageBackground source={example1.backgroundImageHomeScreen} style={styles.image}>
+        <ImageBackground
+          source={example1.backgroundImageHomeScreen}
+          style={styles.image}
+        >
           <View style={styles.top}>
-            <Text style={styles.topText}>{example1.titleTopLeftHomeScreen}</Text>
+            <Text style={styles.topText}>
+              {example1.titleTopLeftHomeScreen}
+            </Text>
           </View>
           <View>
             <Text style={styles.bottomText}>{example1.textInfoHomeScreen}</Text>
-            <Image source={commentsIcon} style={styles.bottomImg} />
+            <View style={{flexDirection: 'row'}}>
+              <Image source={commentsIcon} style={styles.bottomImg} />
+              <Text style={{marginLeft: 10, fontWeight: 'bold'}}>{example1.comments.length}</Text>
+            </View>
           </View>
         </ImageBackground>
       </TouchableHighlight>
 
-    {/* SECOND ARCTICLE */}
+      {/* SECOND ARCTICLE */}
       <TouchableHighlight
         onPress={() => navigation.navigate("SecondArct", { name: "Jane" })}
       >

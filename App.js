@@ -1,7 +1,7 @@
 // NAVIGATION
 import "react-native-gesture-handler";
 // REACT
-import React from "react";
+import React, {useState} from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -15,7 +15,8 @@ import FourthArct from "./components/FourthArct";
 import FifthArct from "./components/FifthArct";
 import CommentsFirstArct from "./components/CommentsFirstArct";
 // DATA
-import example1 from './DBSimulation/jsonSimulation'
+import example from './DBSimulation/jsonSimulation'
+import OneComment from "./components/OneComment";
 
 /* IMAGES */
 const logo = {
@@ -31,9 +32,32 @@ const menu = {
 };
 
 
+
+
 const Stack = createStackNavigator();
 
 export default function App() {
+  const [example1, setExample1] = useState(example)
+
+  // LikeFunc
+const addLike = (id) => {
+  const newComments = example1.map((comment, i) => {
+    if (comment.id === id){
+      const updatedComment = {
+        ...comment,
+        like: comment.like + 1
+      }
+      return updatedComment
+    }
+    return comment
+  })
+  setExample1(newComments)
+  console.log('mama')
+}
+
+
+// DisLikeFunc
+
   return (
     <NavigationContainer>
       {/* HEADER */}
@@ -64,6 +88,7 @@ export default function App() {
             headerStyle: { backgroundColor: "blue" },
             headerTintColor: "white",
           }}
+          initialParams={{addLike: addLike}}
         />
 
         {/* Other ARTICLES */}

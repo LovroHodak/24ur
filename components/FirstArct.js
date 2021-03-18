@@ -89,14 +89,14 @@ export default function FirstArct({ navigation, route }) {
         <View style={styles.commentsViewTouchableHeader}>
           <TouchableHighlight
             onPress={() =>
-              navigation.navigate("CommentsFirstArct", { name: "Jane" })
+              navigation.navigate("CommentsFirstArct", { comments: route.params.comments })
             }
           >
             <View style={styles.commentsViewHeader}>
               <Image source={commentsIcon} style={styles.commentsIcon} />
               <View style={styles.commentsDataHeader}>
                 <Text style={styles.commentsTextHeader}>KOMENTARJI</Text>
-                <Text style={styles.commentsNumberHeader}>18</Text>
+                <Text style={styles.commentsNumberHeader}>{route.params.comments.length}</Text>
               </View>
             </View>
           </TouchableHighlight>
