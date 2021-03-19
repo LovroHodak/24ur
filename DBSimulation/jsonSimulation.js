@@ -16,9 +16,9 @@ function dateStrFunct() {
   return dateStr;
 }
 
-function uniqeId () {
-    return '_' + Math.random().toString(36).substr(2, 9);
-  };
+function uniqeId() {
+  return "_" + Math.random().toString(36).substr(2, 9);
+}
 
 const example1 = {
   backgroundImageHomeScreen: {
@@ -53,32 +53,34 @@ const example1 = {
     "Vlada",
     "Stroka",
   ],
-  comments: [  {
-    id: uniqeId(),
-  profileFoto: {
-    uri:
-      "https://www.telugubulletin.com/wp-content/uploads/2019/11/Music.jpg",
-  },
-  name: "humblebrag",
-  date: dateStrFunct(),
-  comment:
-    'Podpiram maske. Podpiram socialno distanciranje. Podpiram testiranje.Ne podpiram cepljenja z "insta" cepivi. Če bi bil v ogroženi skupini, bi se cepil, ker pa nisem se ne bom, dokler ne bo narejeno cepivo, ki omogoča zaščito pred vsemi sevi.',
-    likes: 4,
-    dislikes: 0
-},
-{
-  id: uniqeId(),
-  profileFoto: {
-    uri:
-      "https://www.telugubulletin.com/wp-content/uploads/2019/11/Music.jpg",
-  },
-  name: "JanezKranjski",
-  date: dateStrFunct(),
-  comment:
-    'ne, s tem se pa z ženo že ne bova cepla, počakava na druge, za letos se ne bo rablo cepilni pasuš, ker ne boš mel kam iti, s tem mislim tujino, pr nas, pa se bo pa stanje umirilo po vaušer evforiji, upam',
-    likes: 0,
-    dislikes: 0
-},]
+  comments: [
+    {
+      id: uniqeId(),
+      profileFoto: {
+        uri:
+          "https://www.telugubulletin.com/wp-content/uploads/2019/11/Music.jpg",
+      },
+      name: "humblebrag",
+      date: dateStrFunct(),
+      comment:
+        'Podpiram maske. Podpiram socialno distanciranje. Podpiram testiranje.Ne podpiram cepljenja z "insta" cepivi. Če bi bil v ogroženi skupini, bi se cepil, ker pa nisem se ne bom, dokler ne bo narejeno cepivo, ki omogoča zaščito pred vsemi sevi.',
+      likes: 4,
+      dislikes: 0,
+    },
+    {
+      id: uniqeId(),
+      profileFoto: {
+        uri:
+          "https://www.telugubulletin.com/wp-content/uploads/2019/11/Music.jpg",
+      },
+      name: "JanezKranjski",
+      date: dateStrFunct(),
+      comment:
+        "ne, s tem se pa z ženo že ne bova cepla, počakava na druge, za letos se ne bo rablo cepilni pasuš, ker ne boš mel kam iti, s tem mislim tujino, pr nas, pa se bo pa stanje umirilo po vaušer evforiji, upam",
+      likes: 0,
+      dislikes: 0,
+    },
+  ],
 };
 
 module.exports = example1;

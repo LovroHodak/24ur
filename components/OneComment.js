@@ -27,10 +27,10 @@ export default function OneComment(props) {
 
   //console.log('CMOOOOON', props.func)
   //props.func()
-  console.log(props)
+  //console.log(props)
 
   let idd = props.com.id
-  console.log(idd)
+  //console.log(idd)
 
   const likeIt = (idd) => {
     setLikes(likes + 1)

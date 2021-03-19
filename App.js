@@ -14,9 +14,9 @@ import ThirdArct from "./components/ThirdArct";
 import FourthArct from "./components/FourthArct";
 import FifthArct from "./components/FifthArct";
 import CommentsFirstArct from "./components/CommentsFirstArct";
+import OneComment from "./components/OneComment";
 // DATA
 import example from './DBSimulation/jsonSimulation'
-import OneComment from "./components/OneComment";
 
 /* IMAGES */
 const logo = {
@@ -41,18 +41,10 @@ export default function App() {
 
   // LikeFunc
 const addLike = (id) => {
-  const newComments = example1.map((comment, i) => {
-    if (comment.id === id){
-      const updatedComment = {
-        ...comment,
-        like: comment.like + 1
-      }
-      return updatedComment
-    }
-    return comment
-  })
-  setExample1(newComments)
-  console.log('mama')
+  console.log('nr of likes', example1.comments[0].likes)
+  example1.comments[0].likes = example1.comments[0].likes + 1
+  console.log('nr of likes', example1.comments[0].likes)
+  console.log('mama', id)
 }
 
 
@@ -90,7 +82,6 @@ const addLike = (id) => {
           }}
           initialParams={{addLike: addLike}}
         />
-
         {/* Other ARTICLES */}
         <Stack.Screen name="SecondArct" component={SecondArct} />
         <Stack.Screen name="ThirdArct" component={ThirdArct} />
